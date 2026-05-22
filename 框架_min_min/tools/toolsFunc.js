@@ -236,11 +236,11 @@
     }
     ldvm.toolsFunc.dispatch = function dispatch(self, obj, objName, funcName, argList, defaultValue) {
         let name = `${objName}_${funcName}`;
-        if (Object.getOwnPropertyDescriptor(obj, "constructor") !== undefined) {
-            if (Object.getOwnPropertyDescriptor(self, "constructor") !== undefined) {
-                return ldvm.toolsFunc.throwError('TypeError', 'Illegal invocation');
-            }
+        const proto = obj.prototype || obj;
+        if (!(self instanceof proto.constructor)) {
+            return ldvm.toolsFunc.throwError('TypeError', 'Illegal invocation');
         }
+
         try {
             if (typeof ldvm.envFunc[name] === "function") {
                 return ldvm.envFunc[name].apply(self, argList);
