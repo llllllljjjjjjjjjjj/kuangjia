@@ -1,5 +1,4 @@
 //全局对象配置
-// console.log(this === globalThis)
 debugger 
 ldvm = {
     "toolsFunc":{},//功能函数相关，插件
@@ -404,7 +403,7 @@ Node = function Node(){ldvm.toolsFunc.throwError("TypeError", "Failed to constru
 ldvm.toolsFunc.safeProto(Node, "Node");
 Object.setPrototypeOf(Node.prototype, EventTarget.prototype);
 
-const Element = function Element() {
+Element = function Element() {
   ldvm.toolsFunc.throwError("TypeError", "Failed to construct 'Element': Illegal constructor");
 };
 ldvm.toolsFunc.safeProto(Element, "Element");
@@ -570,12 +569,7 @@ globlaThis = window
 
 //用户代码
 //用户代码
+//;(function() {用户代码}).call(window)
 
 //用户代码
-//console.log(window, window === this)
-//.log(this)
-// console.log(globalThis === window)
-// console.log(globalThis === this)
-// console.log(module.exports === this)
-console.log(globalThis.Window === Window);
-console.log(Reflect);
+

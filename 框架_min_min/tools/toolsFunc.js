@@ -189,30 +189,112 @@
                 }
                 return result
             },
-            apply: function(target, thisArg,  args) {
-                let result
-                try{
-                    result = Reflect.apply(target, thisArg,args)
+            //拦截属性描符
+            getOwnPropertyDescriptor: function (target, prop) {
+                let result;
+                try {
+                    result = Reflect.getOwnPropertyDescriptor(target, prop)
                     let type = ldvm.toolsFunc.getType(result)
-                    if(result instanceof Object) {
+                    if ("constructor" !== prop) {
+                        console.log(`{getOwnPropertyDescriptor|obj}:[${objName}] -> prop:[${prop.toString()}],type:[${type}]`);
+                    }
+
+                    //如果result是对象，还要拦截对象属性描述符对象
+                    if (typeof result !== "undefined") {
+                        //所有对象的属性（包括内置对象的属性）都有PropertyDescriptor，只是你需要用 Object.getOwnPropertyDescriptor() 来读取它。
+                        ldvm.toolsFunc.proxy(result, `${objName}.${prop.toString()}.PropertyDescriptor`)
+                    }
+                }
+                catch (e) {
+                    console.log(`{getOwnPropertyDescriptor|obj:[${objName}] -> [${prop.toString()}], error: [${e.message}]}`)
+
+                }
+                return result
+            },
+            //拦截定义属性
+            defineProperty: function (target, prop, descriptor) {
+                let result
+                try {
+                    result = Reflect.defineProperty(target, prop, descriptor)
+                    console.log(`{defineProperty|obj:[${objName}] -> prop:[${prop.toString()}]}`);
+                }
+                catch (e) {
+                    console.log(`{defineProperty|obj:[${objName}] -> [${prop.toString()}], error: [${e.message}]}`)
+
+                }
+                return result
+            },
+            //拦截函数，这里的的target指函数，前面的target指对象; thisArg-谁调用了函数
+            apply: function (target, thisArg, args) {
+                let result
+                try {
+                    result = Reflect.apply(target, thisArg, args)
+                    let type = ldvm.toolsFunc.getType(result)
+                    if (result instanceof Object) {
                         //console.log(`{apply|function:[${objName}],args:[${arguments}],result:[${result}]}`);
                         //参数输出有点复杂--可能是对象，函数，列表等
                         console.log(`{apply|function:[${objName}],args:[${args}],type:[${result}]}`)
                     }
-                    else if(typeof result ==='symbol') {
+                    else if (typeof result === 'symbol') {
                         console.log(`{apply|function:[${objName}],args:[${args}],result:[${result.toString()}]}`)
                     }
                     else {
                         console.log(`{apply|function:[${objName}],args:[${args}],result:[${result}]}`)
                     }
-                    
+
                 }
-                catch(e){
+                catch (e) {
                     console.log(`{apply|function:[${objName}],args:[${args}],error:[${e.message}]}`);
-                    
+
                 }
                 return result
             },
+            //函数创建拦截
+            construct: function (target, argArray, newTarget) {
+                //target--函数对象
+                //argArray--参数列表
+                //newTarget--代理对象
+                let result
+                try {
+                    result = Reflect.construct(target, argArray, newTarget)
+                    let type = ldvm.toolsFunc.getType(result)
+                    console.log(`{construct|function:[${objName}],type:[${type}]}`)
+                }
+                catch (e) {
+                    console.log(`{construct|function:[${objName}],error:[${e.message}]}`);
+                }
+                return result
+            },
+            //删除属性拦截
+            deleteProperty: function (target, propKey) {
+                let result = Reflect.deleteProperty(target, propKey)
+                console.log(`{deleteProperty|obj:[${objName}] -> prop:[${propKey.toString()}], result:[${result}]}`)
+                return result
+            },
+            has: function (target, propKey) {
+                let result = Reflect.has(target, propKey)
+                console.log(`{has|obj:[${objName}] -> prop:[${propKey.toString()}], result:[${result}]}`);
+                return result
+            },
+            //遍历拦截
+            ownKeys: function (target) {
+                let result = Reflect.ownKeys(target);
+                console.log(`{ownKeys|obj:[${objName}]}`);
+                return result;
+            },
+            //获取原型对象
+            getPrototypeOf: function (target) {
+                let result = Reflect.getPrototypeOf(target);
+                console.log(`{getPrototypeOf|obj:[${objName}]}`);
+                return result;
+            },
+            //设置原型对象
+            setPrototypeOf: function (target, proto) {
+                let result = Reflect.setPrototypeOf(target, proto);
+                console.log(`{setPrototypeOf|obj:[${objName}]}`);
+                return result;
+            },
+
         }
 
         let proxyObj = new Proxy(obj, handler)
