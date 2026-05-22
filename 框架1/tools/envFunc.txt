@@ -1,0 +1,47 @@
+0.判断是否要不，看对应浏览器返回值(浏览器执行至该函数hook后，是否为undefined)或看是否后面用到了或看改变了什么变量
+    (默认：执行代码不改变浏览器环境)
+    (结合报错信息)
+    (脱下来的环境是否有遗留信息，要清除；或重新在浏览器运行代码处重新脱环境)
+    补环境可以通过浏览器调试看值额外输出报错信息，进而补充
+1.实现document.createElement('div')--入参--改变了什么--返回值值
+    <1>.该方法在原型链上的Document原型上
+        补document的原型链及该方法
+    <2>.浏览器中的效果1:
+        Document.createElement("div")-报错
+            HTMLDocument.createElement("div")-报错
+            只能document上调用
+        实现：在分发器上
+    <3>.浏览器中的效果2:
+        let div = document.createElement('div')
+            返回值是一个实例对象，该对象的原型为HTMLDocument
+        div.align = value(特殊属性，其他属性可以)
+            设置后,用div.align可以拿到, 但是不是显示在自身上(Object.getOwnPropertyDescriptor拿不到)
+                实际设置在div的原型HTMLDocument上，但是原型不能调用
+            实现思路：实例对象上加一个Symbol类型的属性，存上align--- ldvm.toolsFunc.tgeProtoArr
+    <4>.内部代码--效果---处理传参--设置对象原型--代理该对象--塑造特殊属性的效果
+    <5>.读取返回对象的属性的函数--普通属性与特殊属性
+2.实现getElementsByTagName
+3.实现document.cookie
+    <1>.浏览器效果
+        设置document.cookie = "key1 = value1; key2 = value2;······"
+            只能设置第一个分号前面的键值对
+            如果原来已经设置过key1,则更新为value1
+        读取document.cookie
+            返回--所有-键=值,用分号分开
+4.a标签实现
+5.补浏览器navigator.Plugins
+    是PluginArray类型的类数组对象，数组中每个元素是Plugin对象(类数组不仅可以用所有访问，也可以用键名访问)
+        每个Plugin对象,有description、filename、name、mimeTypes、application/pdf、text/pdf属性
+            其中mimeTypes是MimeTypeArray类型的类数组对象，数组中每个元素是MimeType函数的实例对象
+                MimeType函数的实例对象有description、suffixes、type、enablePlugin属性
+                    其中enablePlugin指向其本身
+6.补浏览器navigator.mimeTypes
+    是MimeTypeArray类型的类数组，数组每个元素是MimeType函数的实例对象
+7.补指纹--特
+    <1>. a = document.createElement("canvas")
+        b = a.getContext("webgl")
+        b.canvas === a----补
+8.思考
+    各种get----先看怎么set·····
+    各种set----
+    

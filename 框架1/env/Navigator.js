@@ -1,0 +1,43 @@
+// Navigator对象
+Navigator = function Navigator(){ldvm.toolsFunc.throwError("TypeError", "Failed to construct 'Navigator': Illegal constructor")}
+ldvm.toolsFunc.safeProto(Navigator, "Navigator");
+Object.setPrototypeOf(Navigator.prototype, Object.prototype);
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "vendorSub", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "vendorSub_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "productSub", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "productSub_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "vendor", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "vendor_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "maxTouchPoints", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "maxTouchPoints_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "scheduling", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "scheduling_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "userActivation", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "userActivation_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "geolocation", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "geolocation_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "doNotTrack", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "doNotTrack_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "webkitTemporaryStorage", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "webkitTemporaryStorage_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "webkitPersistentStorage", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "webkitPersistentStorage_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "hardwareConcurrency", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "hardwareConcurrency_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "cookieEnabled", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "cookieEnabled_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "appCodeName", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "appCodeName_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "appName", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "appName_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "appVersion", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "appVersion_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "platform", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "platform_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "product", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "product_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "userAgent", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "userAgent_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "language", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "language_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "languages", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "languages_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "onLine", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "onLine_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "webdriver", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "webdriver_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "plugins", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "plugins_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "mimeTypes", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "mimeTypes_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "pdfViewerEnabled", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "pdfViewerEnabled_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "connection", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "connection_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "getGamepads", {configurable:true, enumerable:true, writable:true, value: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "getGamepads", arguments)}});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "javaEnabled", {configurable:true, enumerable:true, writable:true, value: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "javaEnabled", arguments)}});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "sendBeacon", {configurable:true, enumerable:true, writable:true, value: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "sendBeacon", arguments)}});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "vibrate", {configurable:true, enumerable:true, writable:true, value: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "vibrate", arguments)}});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "windowControlsOverlay", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "windowControlsOverlay_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "ink", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "ink_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "mediaCapabilities", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "mediaCapabilities_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "permissions", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "permissions_get", arguments)},set:undefined});
+ldvm.toolsFunc.defineProperty(Navigator.prototype, "mediaSession", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, Navigator.prototype, "Navigator", "mediaSession_get", arguments)},set:undefined});
+
+// navigator对象
+navigator = {};
+Object.setPrototypeOf(navigator, Navigator.prototype); 

@@ -1,0 +1,30 @@
+[Window_parent_set 正在执行]，错误信息: 环境函数未定义 
+[Window_self_set 正在执行]，错误信息: 环境函数未定义 
+[Window_top_get 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[Storage_getItem 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[EventTarget_addEventListener 正在执行]，错误信息: 环境函数未定义 
+[Storage_getItem 正在执行]，错误信息: 环境函数未定义 
+成功劫持到结果: 
+undefined 
+第一次d = undefined 
+第二次d = undefined 

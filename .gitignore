@@ -1,0 +1,18 @@
+.idea
+
+.vscode
+
+node_modules/
+
+# 必须忽略，否则会有几万文件要处理
+node_modules/
+# 其他大文件/文件夹
+dist/
+build/
+.git
+*.log
+*.zip
+*.rar
+*.mp4
+
+BaiduSyncdisk/

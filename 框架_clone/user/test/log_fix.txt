@@ -1,0 +1,81 @@
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_AUuXfEG27Xa3x],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_AUuXfEG27Xa3x]} 
+{set|obj:[window] -> prop:[_AUuXfEG27Xa3x],type:[[object Function]]} 
+
+{[window]正在获取[_AUuXfEG27Xa3x]} 
+get|obj:[window] -> [_AUuXfEG27Xa3x], type: [[object Function]] 
+
+{[window._AUuXfEG27Xa3x]正在获取[toString]} 
+get|obj:[window._AUuXfEG27Xa3x] -> [toString], type: [[object Function]] 
+
+{[window._AUuXfEG27Xa3x.toString]正在获取[toString]} 
+get|obj:[window._AUuXfEG27Xa3x.toString] -> [toString], ret: [function toString() { [native code] }] 
+{返回值：function toString() { [native code] }} 
+{返回值：function toString() { [native code] }} 
+
+{apply|function:[window._AUuXfEG27Xa3x.toString],args:[],result:[function () { [native code] }]} 
+{返回值：function () { [native code] }} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[__bc],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[__bc]} 
+{set|obj:[window] -> prop:[__bc],value:[]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_9e859446229841aa1dd905da00d2145f],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_9e859446229841aa1dd905da00d2145f]} 
+{set|obj:[window] -> prop:[_9e859446229841aa1dd905da00d2145f],type:[[object Function]]}
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_b980417d5bcd76c1ee28b867a432e2a0],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_b980417d5bcd76c1ee28b867a432e2a0]} 
+{set|obj:[window] -> prop:[_b980417d5bcd76c1ee28b867a432e2a0],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_e1e689377c0fbdbeb7f573f147736479],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_e1e689377c0fbdbeb7f573f147736479]} 
+{set|obj:[window] -> prop:[_e1e689377c0fbdbeb7f573f147736479],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_07a4982b8029aaf48c4b4d95bc74bdb9],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_07a4982b8029aaf48c4b4d95bc74bdb9]} 
+{set|obj:[window] -> prop:[_07a4982b8029aaf48c4b4d95bc74bdb9],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_1c9208bcfb2bf7494ca7ffbb22911f9d],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_1c9208bcfb2bf7494ca7ffbb22911f9d]} 
+{set|obj:[window] -> prop:[_1c9208bcfb2bf7494ca7ffbb22911f9d],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_c814897e6d2c16b77415a60979a9a909],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_c814897e6d2c16b77415a60979a9a909]} 
+{set|obj:[window] -> prop:[_c814897e6d2c16b77415a60979a9a909],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_0d480d3713ddee1557ab2e623700ed7b],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_0d480d3713ddee1557ab2e623700ed7b]} 
+{set|obj:[window] -> prop:[_0d480d3713ddee1557ab2e623700ed7b],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_765b4a22808933082686525e8ad1892e],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_765b4a22808933082686525e8ad1892e]} 
+{set|obj:[window] -> prop:[_765b4a22808933082686525e8ad1892e],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_dd62100e1e70d16cf50ec1936b1f7470],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_dd62100e1e70d16cf50ec1936b1f7470]} 
+{set|obj:[window] -> prop:[_dd62100e1e70d16cf50ec1936b1f7470],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_1b7c4d6705642cb6e85069bddea4e01e],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_1b7c4d6705642cb6e85069bddea4e01e]} 
+{set|obj:[window] -> prop:[_1b7c4d6705642cb6e85069bddea4e01e],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_95026df65bacde212029e4ce9580ac18],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_95026df65bacde212029e4ce9580ac18]} 
+{set|obj:[window] -> prop:[_95026df65bacde212029e4ce9580ac18],type:[[object Function]]} 
+
+{getOwnPropertyDescriptor|obj}:[window] -> prop:[_ee019d93900dcee2bdafbe5894e6c8a9],type:[[object Undefined]] 
+{defineProperty|obj:[window] -> prop:[_ee019d93900dcee2bdafbe5894e6c8a9]} 
+{set|obj:[window] -> prop:[_ee019d93900dcee2bdafbe5894e6c8a9],value:[0]} 
+
+{[window]正在获取[toString]} 
+get|obj:[window] -> [toString], type: [[object Function]] 
+
+{[window.toString]正在获取[toString]} 
+get|obj:[window.toString] -> [toString], ret: [function toString() { [native code] }] 
+{返回值：function toString() { [native code] }} 
+{返回值：function () { [native code] }} 
+
+{apply|function:[window.toString],args:[],result:[[object Window]]} 
+
+{apply|function:[window._AUuXfEG27Xa3x],args:[,,[object Object],[object Window],,,function encodeURIComponent() { [native code] },function Array() { [native code] },,function Date() { [native code] },[object Math],function Uint8Array() { [native code] },,,function RegExp() { [native code] },function unescape() { [native code] },function parseInt() { [native code] },function Object() { [native code] },[object Navigator],,function Set() { [native code] },function Function() { [native code] },function String() { [native code] },function Error() { [native code] },,,[object Window],[object Reflect]],result:[undefined]} 
