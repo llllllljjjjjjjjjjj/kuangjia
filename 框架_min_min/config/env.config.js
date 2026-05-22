@@ -43,7 +43,7 @@ function getCode(name, type) {
     code += getFile("Location")
     code += getFile("History") 
     code += getFile("Performance")
-    
+    code += getFile("Screen")
     code += getFile("globalThis")//全局环境
     return code
 }
