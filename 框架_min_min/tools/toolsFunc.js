@@ -430,7 +430,17 @@
         let e = new Error()
         e.name = name
         e.message = message
-        e.stack = `TypeError: Illegal constructor\\n    at snippet://`
+        if (typeof Error.captureStackTrace === 'function') {
+            // 浏览器/Node.js 都支持的方式，指定栈的起始点为 throwError 函数本身
+            Error.captureStackTrace(e, throwError);
+        } else {
+            // 兼容不支持 captureStackTrace 的环境，手动切栈（备用方案）
+            if (e.stack) {
+                const stackLines = e.stack.split('\n');
+                // 删掉第一行（throwError 自己），剩下的就是从调用方开始的栈
+                e.stack = stackLines.slice(1).join('\n');
+            }
+        }
         throw e
     }
 }()
