@@ -69,6 +69,8 @@
         }
         ldvm.toolsFunc.setNative(hookFunc, funcInfo.funcName)
         ldvm.toolsFunc.reNameFunc(hookFunc, funcInfo.funcName)
+        hookFunc.length = func.length
+        hookFunc.prototype = func.prototype
         return hookFunc
     }
     ldvm.toolsFunc.getType = function (obj) {

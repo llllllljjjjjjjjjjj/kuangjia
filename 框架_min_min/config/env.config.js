@@ -44,6 +44,7 @@ function getCode(name, type) {
     code += getFile("History") 
     code += getFile("Performance")
     code += getFile("Screen")
+    code += getFile('chrome')
     code += getFile("globalThis")//全局环境
     return code
 }
