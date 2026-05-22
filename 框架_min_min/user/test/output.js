@@ -11,7 +11,7 @@ ldvm.config.print = true//是否输出日志
 ldvm.memory.symbolProxy = Symbol("proxy")
 ldvm.memory.filterProxyProp = [
     ldvm.memory.symbolProxy, 
-    Symbol.toPrimitive, "eval", Object.prototype,  Function.prototype,
+    Symbol.toPrimitive, "eval", Object.prototype, Array.prototype, Function.prototype,
     String.prototype, Number.prototype, Boolean.prototype,
     Math, Date, RegExp, JSON, Promise
 ]//需要过滤的属性
@@ -93,6 +93,8 @@ ldvm.memory.globalVar.gontList = ["SimHei", "SimSun", "NSimSun", "FangSong", "Ka
         }
         ldvm.toolsFunc.setNative(hookFunc, funcInfo.funcName)
         ldvm.toolsFunc.reNameFunc(hookFunc, funcInfo.funcName)
+        hookFunc.length = func.length
+        hookFunc.prototype = func.prototype
         return hookFunc
     }
     ldvm.toolsFunc.getType = function (obj) {
@@ -594,8 +596,7 @@ globlaThis = window
 //用户代码
 //;(function() {用户代码}).call(window)
 let a = [1, 2, 3]
-a = ldvm.toolsFunc.proxy(a, "a")
-
 a.push(4)
-a.push(5)
+
 //用户代码
+

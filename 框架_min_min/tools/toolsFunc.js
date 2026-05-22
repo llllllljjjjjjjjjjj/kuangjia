@@ -124,6 +124,10 @@
             set: function (target, prop, value, receiver) {
                 let result;
                 try {
+                    const readOnlyProps = ['undefined', 'NaN', 'Infinity']
+                    if (target === window && readOnlyProps.includes(prop)) {
+                        return false
+                    }
                     result = Reflect.set(target, prop, value, receiver)
                     let type = ldvm.toolsFunc.getType(value)
                     if (value instanceof Object) {
