@@ -41,6 +41,8 @@ const code = [
 ].join("\n")
 const codeTest = [
     `const _name_ = "${name}";`,
+    `const fs = require("fs");
+    const path = require("path");`,
     configCode,
     toolsCode,
     fs.readFileSync(path.join(__dirname, "tools", "printLog.js"), "utf8"), 
