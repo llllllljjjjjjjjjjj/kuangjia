@@ -7,4 +7,4 @@ history = ldvm.toolsFunc.proxy(history, "history")
 performance = ldvm.toolsFunc.proxy(performance, "performance")  
 localStorage = ldvm.toolsFunc.proxy(localStorage, 'localStorage');
 chrome = ldvm.toolsFunc.proxy(chrome, 'chrome');
-globlaThis = window
+globalThis = window

@@ -1,2 +1,0 @@
-{getPrototypeOf|obj:[window]} 
-true 

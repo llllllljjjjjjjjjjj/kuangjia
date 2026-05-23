@@ -15,6 +15,8 @@ ldvm.memory.filterProxyProp = [
     String.prototype, Number.prototype, Boolean.prototype,
     Math, Date, RegExp, JSON, Promise, 'prototype', '__proto__', 
     "Document", "Window", "History", "Navigator", "Location", "Performance","EventTarget", "Event", 
+    constructor
+    
 ]//需要过滤的属性
 ldvm.memory.symbolData = Symbol("data"); // 保存当前对象上原型的属性
 ldvm.memory.tag = []//存储tag标签
@@ -596,12 +598,11 @@ history = ldvm.toolsFunc.proxy(history, "history")
 performance = ldvm.toolsFunc.proxy(performance, "performance")  
 localStorage = ldvm.toolsFunc.proxy(localStorage, 'localStorage');
 chrome = ldvm.toolsFunc.proxy(chrome, 'chrome');
-globlaThis = window
+globalThis = window
 
 //用户代码
 //用户代码
 //;(function() {用户代码}).call(window)
-console.log(window.__proto__== Window.prototype)
 
 
 //用户代码
