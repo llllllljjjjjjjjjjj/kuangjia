@@ -1,6 +1,7 @@
 const _name_ = "test";
-const fs = require("fs")
-const path = require("path")
+const fs = require("fs");
+    const path = require("path");
+fs.writeFileSync("log.txt", "")
 //全局对象配置
 debugger
 ldvm = {

@@ -43,6 +43,7 @@ const codeTest = [
     `const _name_ = "${name}";`,
     `const fs = require("fs");
     const path = require("path");`,
+    `fs.writeFileSync("log.txt", "")`,
     configCode,
     toolsCode,
     fs.readFileSync(path.join(__dirname, "tools", "printLog.js"), "utf8"), 
