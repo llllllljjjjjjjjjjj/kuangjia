@@ -13,7 +13,7 @@ ldvm.memory.filterProxyProp = [
     ldvm.memory.symbolProxy, 
     Symbol.toPrimitive, "eval", Object.prototype, Array.prototype, Function.prototype,
     String.prototype, Number.prototype, Boolean.prototype,
-    Math, Date, RegExp, JSON, Promise
+    Math, Date, RegExp, JSON, Promise, 'prototype', '__proto__'
 ]//需要过滤的属性
 ldvm.memory.symbolData = Symbol("data"); // 保存当前对象上原型的属性
 ldvm.memory.tag = []//存储tag标签

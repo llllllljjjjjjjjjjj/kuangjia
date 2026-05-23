@@ -13,7 +13,7 @@ ldvm.memory.filterProxyProp = [
     ldvm.memory.symbolProxy, 
     Symbol.toPrimitive, "eval", Object.prototype, Array.prototype, Function.prototype,
     String.prototype, Number.prototype, Boolean.prototype,
-    Math, Date, RegExp, JSON, Promise
+    Math, Date, RegExp, JSON, Promise, 'prototype', '__proto__'
 ]//需要过滤的属性
 ldvm.memory.symbolData = Symbol("data"); // 保存当前对象上原型的属性
 ldvm.memory.tag = []//存储tag标签
@@ -148,6 +148,10 @@ ldvm.memory.globalVar.gontList = ["SimHei", "SimSun", "NSimSun", "FangSong", "Ka
             set: function (target, prop, value, receiver) {
                 let result;
                 try {
+                    const readOnlyProps = ['undefined', 'NaN', 'Infinity']
+                    if (target === window && readOnlyProps.includes(prop)) {
+                        return false
+                    }
                     result = Reflect.set(target, prop, value, receiver)
                     let type = ldvm.toolsFunc.getType(value)
                     if (value instanceof Object) {
@@ -413,6 +417,7 @@ Object.setPrototypeOf(Element.prototype, Node.prototype);
 Document = function Document(){}
 ldvm.toolsFunc.safeProto(Document, "Document");
 Object.setPrototypeOf(Document.prototype, Node.prototype);
+
 HTMLDocument = function HTMLDocument(){ldvm.toolsFunc.throwError("TypeError", "Failed to construct 'HTMLDocument': Illegal constructor")}
 ldvm.toolsFunc.safeProto(HTMLDocument, "HTMLDocument");
 Object.setPrototypeOf(HTMLDocument.prototype, Document.prototype);
@@ -595,8 +600,8 @@ globlaThis = window
 //用户代码
 //用户代码
 //;(function() {用户代码}).call(window)
-let a = [1, 2, 3]
-a.push(4)
+console.log(window.__proto__== Window.prototype)
+
 
 //用户代码
 
