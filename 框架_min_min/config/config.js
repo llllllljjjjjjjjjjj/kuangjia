@@ -15,7 +15,7 @@ ldvm.memory.filterProxyProp = [
     String.prototype, Number.prototype, Boolean.prototype,
     Math, Date, RegExp, JSON, Promise, 'prototype', '__proto__', 
     "Document", "Window", "History", "Navigator", "Location", "Performance","EventTarget", "Event", 
-    constructor
+    'constructor'
     
 ]//需要过滤的属性
 ldvm.memory.symbolData = Symbol("data"); // 保存当前对象上原型的属性

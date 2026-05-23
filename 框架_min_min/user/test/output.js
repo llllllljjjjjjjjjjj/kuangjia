@@ -389,6 +389,12 @@ ldvm.memory.globalVar.gontList = ["SimHei", "SimSun", "NSimSun", "FangSong", "Ka
     ldvm.envFunc.Window_parent_set = function Window_parent_set() {
         return window;
     };
+    ldvm.envFunc.Window_parent_get = function Window_parent_get() {
+        return window;
+    }
+    ldvm.envFunc.Window_get_self = function Window_get_self() {
+        return window;
+    }
     ldvm.envFunc.Window_self_set = function Window_self_set() { return window; };
 }()
 
@@ -603,7 +609,7 @@ globalThis = window
 //用户代码
 //用户代码
 //;(function() {用户代码}).call(window)
-
+console.log(parent instanceof Window)
 
 //用户代码
 
