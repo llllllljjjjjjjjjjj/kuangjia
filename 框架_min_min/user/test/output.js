@@ -387,15 +387,13 @@ ldvm.memory.globalVar.gontList = ["SimHei", "SimSun", "NSimSun", "FangSong", "Ka
         return window;
     };
     ldvm.envFunc.Window_self_set = function Window_self_set() { 
-        this.self = arguments[0]
         return window; 
     };
     ldvm.envFunc.Window_parent_set = function Window_parent_set() {
-        this.self = arguments[0]
         return window;
     };
     ldvm.envFunc.Window_top_set = function Window_top_set() {
-        this.top = arguments[0]
+
         return window;
     };
     ldvm.envFunc.Window_parent_get = function Window_parent_get() {
