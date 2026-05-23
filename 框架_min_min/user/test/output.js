@@ -15,7 +15,7 @@ ldvm.memory.filterProxyProp = [
     String.prototype, Number.prototype, Boolean.prototype,
     Math, Date, RegExp, JSON, Promise, 'prototype', '__proto__', 
     "Document", "Window", "History", "Navigator", "Location", "Performance","EventTarget", "Event", 
-    constructor
+    'constructor'
     
 ]//需要过滤的属性
 ldvm.memory.symbolData = Symbol("data"); // 保存当前对象上原型的属性
@@ -386,16 +386,22 @@ ldvm.memory.globalVar.gontList = ["SimHei", "SimSun", "NSimSun", "FangSong", "Ka
     ldvm.envFunc.Window_self_get = function Window_self_get() {
         return window;
     };
+    ldvm.envFunc.Window_self_set = function Window_self_set() { 
+        this.self = arguments[0]
+        return window; 
+    };
     ldvm.envFunc.Window_parent_set = function Window_parent_set() {
+        this.self = arguments[0]
+        return window;
+    };
+    ldvm.envFunc.Window_top_set = function Window_top_set() {
+        this.top = arguments[0]
         return window;
     };
     ldvm.envFunc.Window_parent_get = function Window_parent_get() {
         return window;
-    }
-    ldvm.envFunc.Window_get_self = function Window_get_self() {
-        return window;
-    }
-    ldvm.envFunc.Window_self_set = function Window_self_set() { return window; };
+    };
+   
 }()
 
 //env相关代码
@@ -549,7 +555,7 @@ ldvm.toolsFunc.defineProperty(Window.prototype, "TEMPORARY", {
     writable: false
 });
 ldvm.toolsFunc.defineProperty(window, "name", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, undefined, "Window", "name_get", arguments, '')}, set: function (){return ldvm.toolsFunc.dispatch(this, undefined, "Window", "name_set", arguments)}}); 
-ldvm.toolsFunc.defineProperty(window, "top", {configurable:false, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, window, "Window", "top_get", arguments)},set:undefined}); 
+ldvm.toolsFunc.defineProperty(window, "top", {configurable:false, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, window, "Window", "top_get", arguments)},set: function (){return ldvm.toolsFunc.dispatch(this, window, "Window", "top_set", arguments)}}); 
 ldvm.toolsFunc.defineProperty(window, "self", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, window, "Window", "self_get", arguments)},set: function (){return ldvm.toolsFunc.dispatch(this, window, "Window", "self_set", arguments)}}); 
 ldvm.toolsFunc.defineProperty(window, "parent", {configurable:true, enumerable:true, get: function (){return ldvm.toolsFunc.dispatch(this, window, "Window", "parent_get", arguments)},set: function (){return ldvm.toolsFunc.dispatch(this, window, "Window", "parent_set", arguments)}}); 
 eval = ldvm.toolsFunc.hook(eval, undefined, false, function(){}, function(){}).bind(window)
@@ -609,7 +615,8 @@ globalThis = window
 //用户代码
 //用户代码
 //;(function() {用户代码}).call(window)
-console.log(parent instanceof Window)
+top
+window.top 
 
 //用户代码
 

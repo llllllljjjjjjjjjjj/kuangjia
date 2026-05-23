@@ -53,7 +53,7 @@ const codeTest = [
 ].join("\n")
 
 // ✅ 用原生 vm 运行代码，Proxy 100% 可用
-//const result = vm.runInContext(codeTest, vm1, {filename: "./debugJS.js"})
+const result = vm.runInContext(codeTest, vm1, {filename: "./debugJS.js"})
 
 // 输出目录也正确
 const outputPath = path.join(__dirname, "user", name, "output.js")
