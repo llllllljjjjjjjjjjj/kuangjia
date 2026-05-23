@@ -57,6 +57,6 @@ const codeTest = [
 
 // 输出目录也正确
 const outputPath = path.join(__dirname, "user", name, "output.js")
-fs.writeFileSync(outputPath, code, 'utf8')
+fs.writeFileSync(outputPath, codeTest, 'utf8')
 
 console.log("执行成功！文件已输出到：" + outputPath)

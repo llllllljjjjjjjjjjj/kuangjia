@@ -1,0 +1,4 @@
+{getPrototypeOf|obj:[window]} 
+{get|obj:[window] -> [toString], type: [[object Function]]} 
+{apply|function:[window.toString],args:[],result:[[object Window]]} 
+{get|obj:[window] -> [top], ret: [[object Window]]} 
