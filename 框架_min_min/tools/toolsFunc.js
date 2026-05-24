@@ -93,15 +93,14 @@
         }
         let handler = {
             get: function (target, prop, receiver) {
-                let result
-                if (typeof prop === 'symbol' && Symbol.keyFor(prop) === undefined) {
-                    return Reflect.get(target, prop, receiver);
+                
+                
+                let result = Reflect.get(target, prop, receiver)
+                if ((typeof prop === 'symbol' && Symbol.keyFor(prop) === undefined )|| ldvm.toolsFunc.filterProxyProp(prop) ||ldvm.toolsFunc.filterProxyProp(result) ) {
+                    return result
                 }
+                console.log(`${objName}正在访问${prop.toString()}`)
                 try {
-                    result = Reflect.get(target, prop, receiver);
-                    if (ldvm.toolsFunc.filterProxyProp(prop)) {
-                        return result;
-                    }
                     let type = ldvm.toolsFunc.getType(result)
                     if (
                         result !== null &&
@@ -109,6 +108,7 @@
                         !result[ldvm.memory.symbolProxy]
                     ) {
                         console.log(`{get|obj:[${objName}] -> [${prop.toString()}], type: [${type}]}`)
+                        console.log(`代理了${objName}.${prop.toString()}`)
                         result = ldvm.toolsFunc.proxy(result, `${objName}.${prop.toString()}`)
                     } else if (typeof result == "symbol") {
                         console.log(`{get|obj:[${objName}] -> [${prop.toString()}], ret: [${result.toString()}]}`)
@@ -119,10 +119,14 @@
                 } catch (e) {
                     console.log(`{get|obj:[${objName}] -> [${prop.toString()}], error: [${e.message}]}`)
                 }
+                if(ldvm.memory.symbolProxy in obj) {
+                    return result[ldvm.memory.symbolProxy]
+                }
                 return result;
             },
             set: function (target, prop, value, receiver) {
                 let result;
+                console.log(`${objName}正在设置${prop.toString()}`)
                 try {
                     const readOnlyProps = ['undefined', 'NaN', 'Infinity']
                     if (target === window && readOnlyProps.includes(prop)) {

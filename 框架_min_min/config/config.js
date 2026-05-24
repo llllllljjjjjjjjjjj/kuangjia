@@ -11,11 +11,13 @@ ldvm.config.print = true//是否输出日志
 ldvm.memory.symbolProxy = Symbol("proxy")
 ldvm.memory.filterProxyProp = [
     ldvm.memory.symbolProxy, 
-    Symbol.toPrimitive, "eval", Object.prototype, Array.prototype, Function.prototype,
+    Symbol.toPrimitive, "eval",
+    Object.prototype, Array.prototype, Function.prototype,
     String.prototype, Number.prototype, Boolean.prototype,
-    Math, Date, RegExp, JSON, Promise, 'prototype', '__proto__', 
-    "Document", "Window", "History", "Navigator", "Location", "Performance","EventTarget", "Event", 
-    'constructor'
+    Math, Date, RegExp, JSON, Promise,
+    'prototype', '__proto__', 
+    //"Document", "Window", "History", "Navigator", "Location", "Performance","EventTarget", "Event", 
+    'constructor', 'toString'
     
 ]//需要过滤的属性
 ldvm.memory.symbolData = Symbol("data"); // 保存当前对象上原型的属性
