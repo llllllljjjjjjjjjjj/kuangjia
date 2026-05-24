@@ -94,7 +94,6 @@
         let handler = {
             get: function (target, prop, receiver) {
                 
-                
                 let result = Reflect.get(target, prop, receiver)
                 if ((typeof prop === 'symbol' && Symbol.keyFor(prop) === undefined )|| ldvm.toolsFunc.filterProxyProp(prop) ||ldvm.toolsFunc.filterProxyProp(result) ) {
                     return result
@@ -119,7 +118,7 @@
                 } catch (e) {
                     console.log(`{get|obj:[${objName}] -> [${prop.toString()}], error: [${e.message}]}`)
                 }
-                if(ldvm.memory.symbolProxy in obj) {
+                if(ldvm.memory.symbolProxy in obj && ldvm.config.isreturn) {
                     return result[ldvm.memory.symbolProxy]
                 }
                 return result;
@@ -216,7 +215,9 @@
             },
             has: function (target, propKey) {
                 let result = Reflect.has(target, propKey)
-                console.log(`{has|obj:[${objName}] -> prop:[${propKey.toString()}], result:[${result}]}`);
+                if(propKey !== ldvm.memory.symbolProxy){
+                    console.log(`{has|obj:[${objName}] -> prop:[${propKey.toString()}], result:[${result}]}`);
+                }
                 return result
             },
             ownKeys: function (target) {

@@ -7,15 +7,18 @@ ldvm = {
     "memory": {}, //内存相关
 }
 ldvm.config.proxy = true//是否开启代理
+ldvm.config.isreturn = false
 ldvm.config.print = true//是否输出日志
-ldvm.memory.symbolProxy = Symbol("proxy")
+ldvm.memory.symbolProxy = Symbol("proxy")//标记代理
+//过滤掉不需要代理的属性，以及过滤掉不需要代理的返回值
 ldvm.memory.filterProxyProp = [
     ldvm.memory.symbolProxy, 
-    Symbol.toPrimitive, "eval",
+    Symbol.toPrimitive, "eval",//不代理eval因为代理后toString处理不了，底层c++实现
     Object.prototype, Array.prototype, Function.prototype,
     String.prototype, Number.prototype, Boolean.prototype,
     Math, Date, RegExp, JSON, Promise,
     'prototype', '__proto__', 
+    //如果检测了window.Document === Document要取消注释（日志输出window访问了Document）
     //"Document", "Window", "History", "Navigator", "Location", "Performance","EventTarget", "Event", 
     'constructor', 'toString'
     
