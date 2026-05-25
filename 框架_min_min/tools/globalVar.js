@@ -1,13 +1,16 @@
-// 全局变量初始化
 !function () {
-    let onEnter = function (obj) {
+    // 提前备份原生console方法，避免被代理污染
+    const originalLog = console.log.bind(console);
+    const originalError = console.error.bind(console);
+
+    const onEnter = function (obj) {
         try {
-            // 直接调用 printLog 写入文件
             ldvm.toolsFunc.printLog(obj.args);
+        } catch (e) {
+            originalError("日志处理异常:", e);
         }
-        catch (e) { }
-    }
-    // 备份原生console.log（可选，如果你想同时保留控制台输出）
-    const originalLog = console.log;
-    console.log = ldvm.toolsFunc.hook(originalLog, undefined, false, onEnter, function () { }, true);
+    };
+
+    // 基于原生方法hook，保留控制台正常输出
+    console.log = ldvm.toolsFunc.hook(originalLog, undefined, false, onEnter, function () {}, true);
 }();

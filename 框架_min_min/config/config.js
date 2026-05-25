@@ -6,6 +6,7 @@ ldvm = {
     "config": {}, //配置相关
     "memory": {}, //内存相关
 }
+delete InstallTrigger
 ldvm.config.proxy = true//是否开启代理
 ldvm.config.isreturn = false
 ldvm.config.print = true//是否输出日志

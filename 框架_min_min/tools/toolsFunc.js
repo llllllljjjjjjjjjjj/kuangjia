@@ -118,7 +118,7 @@
                 } catch (e) {
                     console.log(`{get|obj:[${objName}] -> [${prop.toString()}], error: [${e.message}]}`)
                 }
-                if(ldvm.memory.symbolProxy in obj && ldvm.config.isreturn) {
+                if((typeof result === "function" || typeof result === "object" ) && result != undefined && result != null && (ldvm.memory.symbolProxy in result) && ldvm.config.isreturn) {
                     return result[ldvm.memory.symbolProxy]
                 }
                 return result;
